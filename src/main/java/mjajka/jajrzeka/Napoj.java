@@ -28,7 +28,7 @@ public final class Napoj {
         PotionMeta m = (PotionMeta) it.getItemMeta();
         m.setColor(Color.fromRGB(255, 140, 80));
         m.setItemModel(new NamespacedKey("jajrzeka", "napoj"));
-        m.itemName(Component.text("Jajrzeka", TextColor.color(0xFF9A5A)).decorate(TextDecoration.BOLD));
+        m.customName(Component.text("Jajrzeka", TextColor.color(0xFF9A5A)).decorate(TextDecoration.BOLD).decoration(TextDecoration.ITALIC, false));
         m.lore(List.of(
                 linia(Component.text("Smak: ", NamedTextColor.GRAY)
                         .append(Component.text("Jabłko", TextColor.color(0xE84A3A)))
@@ -36,7 +36,7 @@ public final class Napoj {
                 linia(Component.text("Napój z jajecznej rzeki", NamedTextColor.DARK_GRAY)),
                 linia(Component.empty()),
                 linia(Component.text("Po wypiciu:", NamedTextColor.GRAY)),
-                linia(Component.text(" + Regeneracja, Szybkość", NamedTextColor.GREEN)),
+                linia(Component.text(" + Regeneracja III, Szybkość II", NamedTextColor.GREEN)),
                 linia(Component.text(" + Wyskok, Absorpcja", NamedTextColor.GREEN)),
                 linia(Component.text(" + Najedzenie", NamedTextColor.GOLD))
         ));

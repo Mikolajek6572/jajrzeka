@@ -153,16 +153,14 @@ public final class Paczka implements Listener {
                 pliki.put(je.getName().substring(PREFIKS.length()), jar.getInputStream(je).readAllBytes());
             }
         }
-        // wlasna tekstura z plugins/Jajrzeka/napoj.png nadpisuje te z jara
-        File wlasna = new File(plugin.getDataFolder(), "napoj.png");
+        // wlasna tekstura z plugins/Jajrzeka/napoj_3d.png nadpisuje te z jara (atlas 32x32 modelu 3D)
+        File wlasna = new File(plugin.getDataFolder(), "napoj_3d.png");
         if (wlasna.isFile()) {
-            pliki.put("assets/jajrzeka/textures/item/napoj.png", Files.readAllBytes(wlasna.toPath()));
+            pliki.put("assets/jajrzeka/textures/item/napoj_3d.png", Files.readAllBytes(wlasna.toPath()));
         }
         pliki.put("pack.mcmeta", utf("{\"pack\":{\"description\":\"§6Jajrzeka §7- Jabłko Brzoskwinia\",\"min_format\":75,\"max_format\":75}}"));
         pliki.put("assets/jajrzeka/items/napoj.json",
                 utf("{\"model\":{\"type\":\"minecraft:model\",\"model\":\"jajrzeka:item/napoj\"}}"));
-        pliki.put("assets/jajrzeka/models/item/napoj.json",
-                utf("{\"parent\":\"minecraft:item/generated\",\"textures\":{\"layer0\":\"jajrzeka:item/napoj\"}}"));
 
         ByteArrayOutputStream bout = new ByteArrayOutputStream();
         LocalDateTime staly = LocalDateTime.of(2026, 1, 1, 0, 0);
