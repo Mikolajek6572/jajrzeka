@@ -1,0 +1,14 @@
+name: Jajrzeka
+version: '${version}'
+main: mjajka.jajrzeka.Jajrzeka
+api-version: '1.21'
+author: MikroJajko
+description: Napoj Jajrzeka (Jablko Brzoskwinia) z wlasna tekstura
+commands:
+  jajrzeka:
+    description: Daje napoj Jajrzeka
+    usage: /jajrzeka daj [gracz] [ilosc]
+    permission: jajrzeka.daj
+permissions:
+  jajrzeka.daj:
+    default: op

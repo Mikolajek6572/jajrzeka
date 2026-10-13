@@ -1,0 +1,25 @@
+# ==========================================
+#  Jajrzeka - napoj Jablko Brzoskwinia
+# ==========================================
+
+paczka:
+  wlaczona: true
+  # plugin sam hostuje paczke z tekstura na tym porcie (musi byc otwarty jak gracze sa spoza twojej sieci)
+  port: 8766
+  # adres ktory dostanie gracz - "auto" bierze server-ip albo IP z sieci lokalnej
+  # jak gracze lacza sie z internetu wpisz tu swoje publiczne IP albo domene
+  adres: auto
+  # paczka z GitHuba (jak podmienisz napoj.png wyczysc to pole, wtedy plugin sam hostuje na porcie)
+  url-zewnetrzny: "https://raw.githubusercontent.com/Mikolajek6572/jajrzeka/main/Jajrzeka-paczka.zip"
+  # czy gracz musi przyjac paczke
+  wymagana: false
+
+# efekty po wypiciu  nazwa: [sekundy, poziom]
+efekty:
+  regeneration: [10, 2]
+  speed: [60, 2]
+  jump_boost: [60, 1]
+  absorption: [120, 1]
+# ile glodu napelnia (polowki udek) i nasycenia
+jedzenie: 6
+nasycenie: 8.0
