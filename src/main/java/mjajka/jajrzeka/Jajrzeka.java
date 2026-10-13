@@ -29,6 +29,9 @@ public final class Jajrzeka extends JavaPlugin {
         getCommand("jajrzeka").setExecutor(kom);
         getCommand("jajrzeka").setTabCompleter(kom);
         dodajCrafting();
+        Aktualizacje akt = new Aktualizacje(this);
+        getServer().getPluginManager().registerEvents(akt, this);
+        akt.start();
     }
 
     @Override

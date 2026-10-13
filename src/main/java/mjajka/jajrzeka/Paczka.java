@@ -39,6 +39,8 @@ public final class Paczka implements Listener {
 
     private static final UUID ID_PACZKI = UUID.nameUUIDFromBytes("Jajrzeka-paczka".getBytes(StandardCharsets.UTF_8));
     private static final String PREFIKS = "paczka/";
+    private static final String STARY_LINK = "https://raw.githubusercontent.com/Mikolajek6572/jajrzeka/main/Jajrzeka-paczka.zip";
+    private static final String NOWY_LINK = "https://raw.githubusercontent.com/Mikolajek6572/jajrzeka/v{wersja}/Jajrzeka-paczka.zip";
 
     private final Jajrzeka plugin;
     private volatile byte[] zip;
@@ -62,8 +64,14 @@ public final class Paczka implements Listener {
         }
         if (!cfg.getBoolean("paczka.wlaczona", true)) return;
         String zew = cfg.getString("paczka.url-zewnetrzny", "");
+        if (STARY_LINK.equals(zew)) {
+            // stary link do main psul sie po aktualizacji paczki, bierzemy ta z wersji pluginu
+            zew = NOWY_LINK;
+            cfg.set("paczka.url-zewnetrzny", NOWY_LINK);
+            plugin.saveConfig();
+        }
         if (zew != null && !zew.isBlank()) {
-            url = zew.trim();
+            url = zew.trim().replace("{wersja}", plugin.getPluginMeta().getVersion());
             plugin.getLogger().info("Paczka z zewnetrznego linku: " + url + " (sha1 " + sha1Hex + ")");
             return;
         }

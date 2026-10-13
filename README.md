@@ -18,3 +18,5 @@ zloto    butelka wody    wiadro wody
 Po wypiciu: Regeneracja III, Szybkosc II, Wyskok, Absorpcja i najedzenie. Jest tez wersja jako mod Fabric (jar w wydaniach)
 
 Paczka z tekstura (`Jajrzeka-paczka.zip`) pobiera sie z tego repo, efekty napoju ustawisz w `config.yml`
+
+Od 1.0.2 plugin sam pobiera nowe wersje do `plugins/update`, wchodza po restarcie serwera (wylaczysz w `aktualizacje.auto`)
